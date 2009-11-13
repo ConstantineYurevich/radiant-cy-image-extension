@@ -23,7 +23,7 @@ Disproportionate resize with defined width and height:
   
   <r:cy_image:resize src="/images/test.jpg" height="100" width="100" alt="Test image" />
 
-Proportional resize by width/height:
+Proportional resize with defined either width or height:
 
   <r:cy_image:resize src="/images/test.jpg" width="100" alt="Test image" />
   <r:cy_image:resize src="/images/test.jpg" height="100" alt="Test image" />
