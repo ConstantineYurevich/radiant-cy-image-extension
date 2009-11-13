@@ -4,7 +4,7 @@ class ImageCache
   CY_IMAGE_CACHE_URL = '/images/cy_image/cache/' 
   
   def initialize(src, width, height, resize_type)
-    @src = src
+    @src = '/public/' + src.gsub(/^\/+/, '')
     @width = width
     @height = height
     @resize_type = resize_type

@@ -30,11 +30,16 @@ module CyImageTags
       image_cache = ImageCache.new(tag.attr['src'], tag.attr['width'], tag.attr['height'], 'resize')
       if (!image_cache.cache_exists?)
         img =  Magick::Image.read(RAILS_ROOT + tag.attr['src']).first
-        if (height > 0)
+        if (height > 0 && width > 0)
           img.resize!(width, height)
         else
-          scale = width / img.x_resolution
-          img.scale!(scale)
+          if (width > 0)
+            scale = width / img.x_resolution
+            img.scale!(scale)
+          else
+            scale = height / img.y_resolution
+            img.scale!(scale)
+          end
         end
         img.write(image_cache.get_cache_path)
       end
@@ -50,7 +55,7 @@ module CyImageTags
     attributes.stringify_keys.each do |name, value|
       attr_str << %Q(#{name.to_s}="#{value.to_s}" )
     end
-    result = %Q{<img #{attr_str} />}
+    result = %Q{<img #{attr_str}/>}
   end
 
 end

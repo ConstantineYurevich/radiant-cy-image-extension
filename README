@@ -1,3 +1,28 @@
-= Cy Image
+= CyImage Radiant Extension
 
-Description goes here
+CyImage extension can be used to implement on-fly image resizing using ImageMagick directly on your Radiant pages.
+
+= Requirements
+
+1. ImageMagick should be installed
+
+2. RMagick ruby gem should be installed (gem install rmagick)
+
+= Installation
+
+cd vendor/extensions  
+  
+git clone git://github.com/ConstantineYurevich/radiant-cy-image-extension.git cy_image
+
+rake radiant:extensions:cy_image:update
+
+= Usage
+
+
+<r:cy_image:thumbnail src="/images/test.jpg" height="100" width="100" alt="Test image" />
+
+Will generate following code:
+<img src="/images/cy_image/cache/test_cfd24216cc89c683a44574931c3da509.jpg" height="100" alt="Test image" width="100" />
+
+Where "/images/cy_image/cache/test_cfd24216cc89c683a44574931c3da509.jpg" is chached 100x100 thumbnail path. 
+Thumbnail - is resized, croped and centered variant of original image.
