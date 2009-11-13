@@ -15,21 +15,21 @@ CyImage extension can be used to implement on-fly image resizing using ImageMagi
 
 == Usage
 
-[\<b>Creating thumbnail with defined width and height:</b>]
+Creating thumbnail with defined width and height:
 
   <r:cy_image:thumbnail src="/images/test.jpg" height="100" width="100" alt="Test image" />
 
-[\<b>Disproportionate resize with defined width and height:</b>]
+Disproportionate resize with defined width and height:
   
   <r:cy_image:resize src="/images/test.jpg" height="100" width="100" alt="Test image" />
 
-[\<b>Proportional resize by width/height:</b>]
+Proportional resize by width/height:
 
   <r:cy_image:resize src="/images/test.jpg" width="100" alt="Test image" />
   <r:cy_image:resize src="/images/test.jpg" height="100" alt="Test image" />
   
   
-[\*Each tag will generate appx. the following code:]
+Each tag will generate appx. the following code:
 
   <img src="/images/cy_image/cache/test_cfd24216cc89c683a44574931c3da509.jpg" height="100" alt="Test image" width="100" />
 
