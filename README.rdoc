@@ -9,9 +9,9 @@ CyImage extension can be used to implement on-fly image resizing using ImageMagi
 
 == Installation
 
-cd vendor/extensions  
-git clone git://github.com/ConstantineYurevich/radiant-cy-image-extension.git cy_image
-rake radiant:extensions:cy_image:update
+  cd vendor/extensions  
+  git clone git://github.com/ConstantineYurevich/radiant-cy-image-extension.git cy_image
+  rake radiant:extensions:cy_image:update
 
 == Usage
 
