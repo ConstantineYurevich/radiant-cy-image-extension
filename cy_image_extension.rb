@@ -4,7 +4,7 @@
 class CyImageExtension < Radiant::Extension
   version "0.1.0"
   description "Image resizing using ImageMagick"
-  url "http://yourwebsite.com/cy_image"
+  url "http://github.com/ConstantineYurevich/radiant-cy-image-extension"
   
   def activate
     Page.send :include, CyImageTags
