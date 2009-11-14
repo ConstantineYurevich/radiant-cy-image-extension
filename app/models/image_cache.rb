@@ -39,6 +39,10 @@ class ImageCache
     return File.exists?(get_cache_path)
   end
   
+  def src
+    @src
+  end
+  
   def url
     if (cache_exists?)
       return get_cache_url

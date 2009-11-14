@@ -16,7 +16,7 @@ module CyImageTags
       height = tag.attr['height'].to_i
       image_cache = ImageCache.new(tag.attr['src'], tag.attr['width'], tag.attr['height'], 'thumbnail')
       if (!image_cache.cache_exists?)
-        img =  Magick::Image.read(RAILS_ROOT + tag.attr['src']).first
+        img =  Magick::Image.read(RAILS_ROOT + image_cache.src).first
         img.crop_resized!(width, height)
         img.write(image_cache.get_cache_path)
       end
@@ -29,7 +29,7 @@ module CyImageTags
       height = tag.attr['height'].to_i
       image_cache = ImageCache.new(tag.attr['src'], tag.attr['width'], tag.attr['height'], 'resize')
       if (!image_cache.cache_exists?)
-        img =  Magick::Image.read(RAILS_ROOT + tag.attr['src']).first
+        img =  Magick::Image.read(RAILS_ROOT + image_cache.src).first
         if (height > 0 && width > 0)
           img.resize!(width, height)
         else
